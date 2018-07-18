@@ -1,12 +1,14 @@
 package test22;
+
 public class MinMax {
 	public static void main(String[] args) {
-		int[] arr = new int[5];
+		int[] arr = new int[6];
 		arr[0] = 10;
 		arr[1] = 2;
 		arr[2] = 8;
 		arr[3] = 30;
 		arr[4] = 20;
+		arr[5] = 15;
 		int min = 0;
 		int max = 0;
 		for (int i = 0; i < arr.length; i++) {
