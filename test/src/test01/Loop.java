@@ -9,6 +9,5 @@ public class Loop {
 		}
 		System.out.println(i);
 	}
-
+ 
 }
-//

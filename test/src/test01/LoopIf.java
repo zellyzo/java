@@ -9,7 +9,7 @@ public class LoopIf {
 
 		num++;
 		System.out.println(num);
-
+ 
 		num = num + 10;
 		System.out.println(num);
 

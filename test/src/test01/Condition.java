@@ -8,7 +8,7 @@ public class Condition {
 		if(age>=30) {
 			System.out.println("30대군요");
 		}else if(age>=20) {
-			System.out.println("20대군요");
+			System.out.println("20대군요"); 
 		}else {
 			System.out.println("30대가 아니군요");
 		}

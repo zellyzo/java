@@ -16,7 +16,7 @@ public class Controller {
 			}
 			for (int i = 0; i < name.size(); i++) {
 				System.out.println(name.get(i));
-			}
+			} 
 			System.out.println("");
 		} else if ("2".equals(order)) {
 			System.out.println("생성할 유저의 이름을 입력하세요.");
