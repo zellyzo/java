@@ -6,19 +6,16 @@ import java.util.Scanner;
 
 public class MenuList {
 	public static ArrayList<HashMap<String, String>> menuList = new ArrayList<HashMap<String, String>>();
-
+	static Scanner scan = new Scanner(System.in);
+	
 	public static void inputData() {
 		HashMap<String, String> hm = new HashMap<String, String>();
-		Scanner scan = new Scanner(System.in);
 		System.out.println("¹¹¸ÔÁö?");
-		String menu = scan.nextLine();
+		hm.put("mMenu", scan.nextLine());
 		System.out.println("¾ó¸¶³ª?");
-		String ser = scan.nextLine();
+		hm.put("mSer", scan.nextLine());
 		System.out.println("¿¹»êÀº?");
-		String price = scan.nextLine();
-		hm.put("mMenu", menu);
-		hm.put("mSer", ser);
-		hm.put("mPrice", price);
+		hm.put("mPrice", scan.nextLine());
 		
 		menuList.add(hm);
 		if (menuList != null) {
@@ -41,5 +38,6 @@ public class MenuList {
 		inputData();
 		inputData();
 		selectMenu();
+		scan.close();
 	}
 }
