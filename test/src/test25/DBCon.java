@@ -5,32 +5,31 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBCon {
+	private static final String url
+	="jdbc:mariadb://localhost:3306/oreo";
+	private static final String id = "root";
+	private static final String pwd = "12345678";
+	private static final String driver="org.mariadb.jdbc.Driver";
 	private static Connection con;
-	private static final String url = "jdbc:mariadb://127.0.0.1:3306/snack";
-	private static final String userName = "root";
-	private static final String passWord = "12345678";
-
-	private static void openCon() {
+	
+	private static void open() {
 		try {
-			Class.forName("org.mariadb.jdbc.Driver");
-			DBCon.con = DriverManager.getConnection(url, userName, passWord);
+			Class.forName(driver);
+			DBCon.con = DriverManager.getConnection(url, id, pwd);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
-
 	public static Connection getCon() {
-		if (con == null) {
-			openCon();
+		if(DBCon.con==null) {
+			open();
 		}
 		return DBCon.con;
 	}
-
-	public static void closeCon() {
-		if (DBCon.con != null) {
+	public static void close() {
+		if(DBCon.con!=null) {
 			try {
 				DBCon.con.close();
 			} catch (SQLException e) {
@@ -38,5 +37,9 @@ public class DBCon {
 			}
 		}
 		DBCon.con = null;
+	}
+	
+	public static void main(String[] args) {
+		DBCon.getCon();
 	}
 }

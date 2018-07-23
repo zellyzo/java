@@ -34,7 +34,7 @@ public class DBCon {
 			}
 			sql = "update user_info set uName = '포테이토칩' where uNum=2";
 			cnt = stm.executeUpdate(sql);
-			if (cnt == 1) {
+			if (cnt == 1) { 
 				System.out.println("수정 완료");
 			} else {
 				System.out.println("수정 에러");
